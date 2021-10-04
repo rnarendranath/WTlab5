@@ -1,5 +1,5 @@
 var http = require('http'); 
-
+const PORT= process.env.PORT||5000;
 var server = http.createServer(function (req, res) {  
     if (req.url == '/') { 
         
@@ -29,6 +29,7 @@ var server = http.createServer(function (req, res) {
 
 });
 
-server.listen(5000);
-
-console.log('Server running on port 5000')
+server.listen(PORT,()=>{
+    
+console.log('Server running on port ' + PORT)
+});
