@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Form</title> 
+        <style>
+            form{
+                padding-left: 100px;;
+            }
+            label{
+                font-weight:bold;
+            }
+            .required
+            {   
+                color: red;
+            }
+            input.right {
+        float: right;
+      }
+            
+        </style>
+    </head>
+    <body style="background-color: bisque;">  
+        <br><br> 
+        <h2 style="color: red; text-align:center;">STUDENT DETAIL FORM</h2><br><br>
+        <form action="successful.html" method = "GET">
+           <label for="fname">First name : <span class="required">*</span></label><br>
+            <input type="text" id="fname" name="fname" placeholder="Your First Name" maxlength = "20" required><br><br>
+            <label for="lname">Last name :  <span class="required">*</span></label><br>
+            <input type="text" id="lname" name="lname" placeholder="Your Last Name" maxlength = "20" required><br><br>
+            <label for="email">Email:  <span class="required">*</span></label><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" maxlength = "30" required><br><br>
+            <label for="number">Phone number :  <span class="required">*</span></label><br>
+            <input type="tel" id="number"  placeholder="Your Phone Number" pattern="[0-9]{10}" required ><br><br>
+            <label for="sex">Sex : <span class="required">*</span></label><br>
+              <input type="radio" name="sex" value="Male" checked><label for="choice1">Male</label>
+              <input type="radio" name="sex" value="Female"><label for="choice">Female</label>
+              <input type="radio" name="sex" value="Other"><label for="choice3">Other</label><br><br>
+            <label for="dob">Date of Birth : <span class="required">*</span></label><br>
+            <input type="date" id="dob" name="dob"min="1990-01-01" max="2010-12-31"  required><br><br>
+            <label for="address">Address :  <span class="required">*</span></label><br>
+            <textarea rows="4" cols="50" id="address" name="address" placeholder="Your postal Address" ></textarea><br><br>
+            <label for="city">City :  <span class="required">*</span></label><br>
+            <input type="text" id="city" name="city" placeholder="City" maxlength = "20" required><br><br>
+            <label for="pincode">Pin code :  <span class="required">*</span></label><br>
+            <input type="tel" id="pincode"  placeholder="Pin code" pattern="[6]{1}[0-9]{5}" required ><br><br>
+            <label for="state">State : <span class="required">*</span></label><br>
+            <select name="state" id="state">
+                <option value="tn">Tamilnadu</option>
+                <option value="ka">Karnataka</option>
+                <option value="kl">Kerala</option>
+                <option value="ap">Andhrapradesh</option>
+            </select><br><br>
+            <label for="country">Country : <span class="required">*</span></label><br>
+            <select name="state">
+                <option value="india" >India</option>
+            </select> <br><br>
+            <input type="submit" value="Submit" onclick="getData()">
+            </form>
+        <script>
+            function getData()
+{
+    //gettting the values
+    var fname = document.getElementById("fname").value;
+    var lname= document.getElementById("lname").value; 
+    var email = document.getElementById("email").value;
+    var number= document.getElementById("number").value; 
+    var dob= document.getElementById("dob").value; 
+    var address= document.getElementById("address").value; 
+    var city= document.getElementById("city").value; 
+    var pincode= document.getElementById("pincode").value; 
+    var state= document.getElementById("state").value; 
+  
+
+    //saving the values in local storage
+    localStorage.setItem("txtValue", fname);
+    localStorage.setItem("txtValue1", lname);
+    localStorage.setItem("txtValue2", email);
+    localStorage.setItem("txtValue3", number);   
+    localStorage.setItem("txtValue4", dob);
+    localStorage.setItem("txtValue5", address);
+    localStorage.setItem("txtValue6", city);
+    localStorage.setItem("txtValue7", pincode);   
+    localStorage.setItem("txtValue8", state);
+
+
+}
+        </script>
+    </body>
+</html>
