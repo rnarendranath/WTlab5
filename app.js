@@ -19,8 +19,8 @@ var server = http.createServer(function (req, res) {
         res.end();
             });
     }
-    
-    else if (req.url == "/successful.html") {
+  
+    else{
         res.writeHead(200,{'Content-type':'text/html'});
         fs.readFile('./successful.html',null,function(error,data){
             if(error){
@@ -33,10 +33,8 @@ var server = http.createServer(function (req, res) {
     res.end();
         });
     }
-  
-    else
     
-        res.end('Invalid Request!');
+        
 
 });
 
